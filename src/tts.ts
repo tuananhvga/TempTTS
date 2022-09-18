@@ -119,6 +119,10 @@ function getConnection(voiceChannelId: string, guild: Guild) {
     return connection;
   }
 
+  if (!voiceChannelId) {
+    return;
+  }
+
   connection = joinVoiceChannel({
     channelId: voiceChannelId,
     guildId: guild.id,
